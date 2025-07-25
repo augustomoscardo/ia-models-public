@@ -5,11 +5,12 @@ import { generateCaption } from './models/api'
 function App() {
   const [imgSrc, setImgSrc] = useState(null)
   const [caption, setCaption] = useState("<Caption>")
-  // https://cdn.britannica.com/47/233847-050-BF9D7855/Boxer-dog-face.jpg
+  // https://images.unsplash.com/photo-1442605527737-ed62b867591f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Ym94ZXIlMjBkb2d8ZW58MHx8MHx8fDA%3D
 
-  function addCaption() {
-    const caption = generateCaption(imgSrc)
-    setCaption(caption)
+  async function addCaption() {
+    setCaption("Gerando legenda...")
+    const caption = await generateCaption(imgSrc)
+    setCaption(caption[0].generated_text)
   }
 
   return (

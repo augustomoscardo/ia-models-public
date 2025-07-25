@@ -1,6 +1,8 @@
 import ImageCaptioner from "./ImageCaptioner";
 
 
-export function generateCaption(imgSrc) {
+export async function generateCaption(imgSrc) {
+  console.log(imgSrc);
+
   return ImageCaptioner.generateCaption(imgSrc)
 }
