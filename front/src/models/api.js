@@ -10,6 +10,6 @@ export async function translateCaption(captionENG) {
     headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({ text: captionENG })
+    body: JSON.stringify({ text: captionENG[0].generated_text })
   }).then(response => response.json())
 }

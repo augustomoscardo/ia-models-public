@@ -15,7 +15,7 @@ function App() {
     
     setCaptionPTBR("Traduzindo legenda...")
     const captionPTBR = await translateCaption(caption)
-    setCaptionPTBR(captionPTBR[0].translated_text)
+    setCaptionPTBR(captionPTBR[0].translation_text)
   }
 
   return (
