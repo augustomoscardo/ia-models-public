@@ -13,3 +13,13 @@ export async function translateCaption(captionENG) {
     body: JSON.stringify({ text: captionENG[0].generated_text })
   }).then(response => response.json())
 }
+
+export async function convertToAudio(captionPTBR) {
+  return fetch("http://localhost:5000/text_to_audio", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ text: captionPTBR[0].translation_text })
+  }).then(response => response.json())
+}
